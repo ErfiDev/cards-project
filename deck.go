@@ -26,6 +26,6 @@ func (d deck) print() {
 	}
 }
 
-func deal(d deck, handSize int) {
-	fmt.Println(d)
-}
+// func (d deck, handSize int) deal() deck {
+// 	return d;
+// }

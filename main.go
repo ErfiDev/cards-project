@@ -1,27 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	// cards := newDeck()
-	// cards.print()
-	// deal(cards, 10)
-	condition := true;
-	var i int = 0;
-	for condition {
-		i++
-		fmt.Println(i)
-		if i == 15 {
-			break
-		}
-	}
+	cards := newDeck()
+	cards.print()
 
+	newCars := createRandomCar(3)
+	newCars.print()
 
-	// newTenCar := createRandomCar(10);
-	// newTenCar.print()
+	day := time.Now().Day()
+	fmt.Println(day)
 
-
-	// newMap := make(map[string]bool);
-	// newMap["single?"] = true;
-	// fmt.Printf("\n %v \n" , newMap);
 }
