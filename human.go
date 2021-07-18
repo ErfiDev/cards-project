@@ -18,3 +18,7 @@ func (h human) addNew(name, family, job string, age int) human {
 
 	return h
 }
+
+func (h human) deleteByIndex() human {
+	return h[:len(h)-1]
+}

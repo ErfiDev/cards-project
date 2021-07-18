@@ -19,7 +19,7 @@ func main() {
 	humans := human{}
 	humans = humans.addNew("erfan", "hanifezade", "developer", 17)
 	humans = humans.addNew("maziar", "rezaee", "mechanic", 22)
-	fmt.Println(humans[1].family)
+	fmt.Println(humans)
 
 	result, err := os.ReadFile("data.json")
 	if err != nil {
