@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-type deck [][]byte
+type deck []string
 
 func newDeck() deck {
 	cards := deck{}
@@ -12,8 +15,7 @@ func newDeck() deck {
 
 	for i, card := range cardSuite {
 		for j, value := range cardValue {
-			toByte := []byte(card + " of " + value)
-			cards = append(cards, toByte)
+			cards = append(cards, card+" of "+value)
 			i += j
 		}
 	}
@@ -29,4 +31,11 @@ func (d deck) print() {
 
 func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
+}
+
+func (d deck) toByteSlice() []byte {
+	toString := strings.Join(d, ",")
+
+	byteSlice := []byte(toString)
+	return byteSlice
 }
