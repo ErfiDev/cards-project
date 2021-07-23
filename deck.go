@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"strings"
 )
 
@@ -38,4 +39,8 @@ func (d deck) toByteSlice() []byte {
 
 	byteSlice := []byte(toString)
 	return byteSlice
+}
+
+func (d deck) saveToFile(filename string) error {
+	return ioutil.WriteFile(filename, d.toByteSlice(), 0666)
 }
