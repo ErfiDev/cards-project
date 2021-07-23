@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type deck []string
+type deck [][]byte
 
 func newDeck() deck {
 	cards := deck{}
@@ -12,7 +12,8 @@ func newDeck() deck {
 
 	for i, card := range cardSuite {
 		for j, value := range cardValue {
-			cards = append(cards, card+" of "+value)
+			toByte := []byte(card + " of " + value)
+			cards = append(cards, toByte)
 			i += j
 		}
 	}
