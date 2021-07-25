@@ -49,12 +49,12 @@ func (d deck) saveToFile(filename string) error {
 }
 
 func newDeckFromFile(filename string) deck {
-	slice, err := ioutil.ReadFile(filename)
+	toByteSlice, err := ioutil.ReadFile(filename)
 	if err != nil {
 		fmt.Println("Error: ", err)
 		os.Exit(1)
 	}
-	toString := string(slice)
+	toString := string(toByteSlice)
 	toStrSlice := strings.Split(toString, ",")
 	return deck(toStrSlice)
 }
